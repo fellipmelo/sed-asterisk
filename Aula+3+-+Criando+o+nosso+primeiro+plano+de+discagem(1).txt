@@ -1,0 +1,14 @@
+[globals] ;Define as variáveis Globais
+ATENDENTE=SIP/2002&SIP/2001 ;Declaração de variável de ramais 
+TELEFONISTA2=SIP/2001
+
+[general] ;Opções gerais do plano de discagem
+writeprotect=no ;Modo somente leitura
+static=yes ;Modo estático
+
+
+[ramais] ;Ramais internos que comecam com a numero 2XXX 
+exten => _2XXX,1,Dial(SIP/${EXTEN},60,tTkK)
+exten => _2XXX,n,HangUp()
+
+
